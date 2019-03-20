@@ -1,11 +1,18 @@
 import "./styles/style.css";
 import {forEach} from "lodash";
-import {PEOPLES} from "./components/people";
-import {createHeader} from "./helpers/domHelpers";
+import {createHeader} from "./helpers/dom";
+import {getData} from "./helpers/data";
 
 const body = document.querySelector("body");
 
-forEach(PEOPLES, name => {
-    const header = createHeader(name);
-    body.appendChild(header);
+async function printData() {
+    const response = await getData();
+    return response;
+}
+
+printData().then(resp => {
+    forEach(resp, name => {
+        const header = createHeader(name);
+        body.appendChild(header);
+    });
 });
