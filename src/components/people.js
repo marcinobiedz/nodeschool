@@ -1,1 +1,3 @@
-export const NAME = "Marcin";
+export const PEOPLES = [
+    "Marcin", "Piotr", "Monika"
+]
