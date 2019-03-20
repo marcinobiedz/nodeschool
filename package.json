@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack src/app.js --watch",
+    "bundle": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/marcinobiedz/nodeschool#readme",
   "devDependencies": {
     "webpack": "latest",
-    "webpack-cli": "latest"
+    "webpack-cli": "latest",
+    "css-loader": "latest",
+    "style-loader": "latest"
   },
   "dependencies": {
     "lodash": "4.17.11"

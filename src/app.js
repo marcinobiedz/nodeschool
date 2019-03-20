@@ -1,3 +1,4 @@
+import "./styles/style.css";
 import {forEach} from "lodash";
 import {PEOPLES} from "./components/people";
 import {createHeader} from "./helpers/domHelpers";
