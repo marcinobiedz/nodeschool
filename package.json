@@ -20,5 +20,8 @@
   "devDependencies": {
     "webpack": "latest",
     "webpack-cli": "latest"
+  },
+  "dependencies": {
+    "lodash": "4.17.11"
   }
 }
