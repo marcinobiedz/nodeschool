@@ -1,3 +1,6 @@
 import {PEOPLES} from "../components/people";
 
-export const getData = () => Promise.resolve(PEOPLES);
+
+export namespace Data {
+    export const getData = () => Promise.resolve(PEOPLES);
+}

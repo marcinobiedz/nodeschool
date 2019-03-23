@@ -1,12 +1,12 @@
 import "./styles/style.less";
 import {forEach} from "lodash";
 import {createHeader} from "./helpers/dom";
-import {getData} from "./helpers/data";
+import {Data} from "./helpers/data";
 
 const body = document.querySelector("body");
 
 async function printData() {
-    const response = await getData();
+    const response = await Data.getData();
     return response;
 }
 
