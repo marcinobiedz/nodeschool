@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
+    devtool: "source-map",
     entry: {
         bundle: ["@babel/polyfill", "./src/app.js"]
     },
