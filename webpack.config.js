@@ -7,7 +7,7 @@ module.exports = {
     mode: "development",
     devtool: "source-map",
     entry: {
-        bundle: ["@babel/polyfill", "./src/app.ts"]
+        bundle: ["@babel/polyfill", "./src/main.tsx"]
     },
     output: {
         path: path.resolve(__dirname, "dist"),

@@ -7,7 +7,8 @@
     "noEmit": true,
     "noImplicitAny": true,
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "preserve"
   },
   "include": [
     "src"
