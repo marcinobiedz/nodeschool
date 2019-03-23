@@ -1,7 +1,9 @@
 const path = require('path');
+const Visualizer = require('webpack-visualizer-plugin');
+
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: ["@babel/polyfill", "./src/app.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -25,5 +27,6 @@ module.exports = {
                 loader: "style-loader!css-loader"
             }
         ]
-    }
+    },
+    plugins: [new Visualizer()]
 };
