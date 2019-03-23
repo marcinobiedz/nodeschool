@@ -7,7 +7,7 @@ module.exports = {
     mode: "development",
     devtool: "source-map",
     entry: {
-        bundle: ["@babel/polyfill", "./src/app.js"]
+        bundle: ["@babel/polyfill", "./src/app.ts"]
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -19,12 +19,18 @@ module.exports = {
         contentBase: path.join(__dirname, 'public'),
         open: false
     },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"]
+    },
     module: {
         rules: [
             {
-                test: /\.js?$/,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                use: [
+                    {loader: "babel-loader"},
+                    {loader: "ts-loader"}
+                ]
             },
             {
                 test: /\.less$/,

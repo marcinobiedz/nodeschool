@@ -11,7 +11,7 @@ async function printData() {
 }
 
 printData().then(resp => {
-    forEach(resp, name => {
+    forEach(resp, (name: any) => {
         const header = createHeader(name);
         body.appendChild(header);
     });
