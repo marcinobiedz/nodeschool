@@ -1,4 +1,4 @@
-import "./styles/style.css";
+import "./styles/style.less";
 import {forEach} from "lodash";
 import {createHeader} from "./helpers/dom";
 import {getData} from "./helpers/data";

@@ -1,13 +1,16 @@
 const path = require('path');
 const Visualizer = require('webpack-visualizer-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
-    mode: "production",
-    entry: ["@babel/polyfill", "./src/app.js"],
+    mode: "development",
+    entry: {
+        bundle: ["@babel/polyfill", "./src/app.js"]
+    },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "[name].js"
     },
     devServer: {
         port: 9000,
@@ -23,10 +26,15 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "less-loader"
+                ]
             }
         ]
     },
     plugins: [new Visualizer()]
+        .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
 };
