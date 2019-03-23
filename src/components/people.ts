@@ -1,3 +1,3 @@
 export const PEOPLES = [
-    "Marcin", "Piotr", "Monika"
+    "Marcin", "Piotr", "Monika", "Zdzichu"
 ]
