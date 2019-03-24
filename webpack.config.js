@@ -1,4 +1,5 @@
 const path = require('path');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -52,5 +53,6 @@ module.exports = {
         ]
     },
     plugins: [new Visualizer()]
+        .concat([new LodashModuleReplacementPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
 };
