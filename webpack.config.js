@@ -1,6 +1,7 @@
 const path = require('path');
 const manifest = require("./package.json");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -19,7 +20,6 @@ module.exports = {
     devServer: {
         port: 9000,
         host: '0.0.0.0',
-        contentBase: path.join(__dirname, 'public'),
         open: false
     },
     resolve: {
@@ -57,6 +57,9 @@ module.exports = {
     plugins: [new Visualizer()]
         .concat([new webpack.DefinePlugin({
             $VERSION: JSON.stringify(manifest.version)
+        })])
+        .concat([new HtmlWebpackPlugin({
+            template: "./public/index.html"
         })])
         .concat([new CleanWebpackPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
