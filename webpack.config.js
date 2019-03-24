@@ -1,6 +1,7 @@
 const path = require('path');
 const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -52,5 +53,6 @@ module.exports = {
         ]
     },
     plugins: [new Visualizer()]
+        .concat([new CleanWebpackPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
 };
