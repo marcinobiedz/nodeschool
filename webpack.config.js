@@ -1,4 +1,6 @@
 const path = require('path');
+const manifest = require("./package.json");
+const webpack = require("webpack");
 const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -53,6 +55,9 @@ module.exports = {
         ]
     },
     plugins: [new Visualizer()]
+        .concat([new webpack.DefinePlugin({
+            $VERSION: JSON.stringify(manifest.version)
+        })])
         .concat([new CleanWebpackPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
 };
