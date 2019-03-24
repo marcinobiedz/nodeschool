@@ -1,4 +1,4 @@
-import {uniqueId} from "lodash";
+import uniqueId from "lodash-es/uniqueId";
 
 export function createHeader(name: any) {
     const h1 = document.createElement("h1");

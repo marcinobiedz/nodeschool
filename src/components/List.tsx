@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {map} from "lodash";
+import map from "lodash-es/map";
 import {Data} from "../data/people";
 
 type ListProps = {};
