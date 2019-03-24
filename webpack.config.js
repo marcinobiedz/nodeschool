@@ -59,7 +59,7 @@ module.exports = {
             $VERSION: JSON.stringify(manifest.version)
         })])
         .concat([new HtmlWebpackPlugin({
-            template: "./public/index.html"
+            template: "./src/assets/index.html"
         })])
         .concat([new CleanWebpackPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])
