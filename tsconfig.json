@@ -2,18 +2,14 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "es6",
-    "lib": ["dom", "es6", "es2017.object"],
+    "lib": ["dom", "es6"],
     "moduleResolution": "node",
     "outDir": "bin",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "noEmitOnError": true,
-    "stripInternal": true,
-    "skipLibCheck": true,
     "removeComments": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "jsx": "preserve"
   },
   "include": [
