@@ -7,10 +7,10 @@
     "outDir": "bin",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
     "noEmitOnError": true,
     "removeComments": false,
-    "jsx": "preserve"
+    "jsx": "react",
+    "declaration": true
   },
   "include": [
     "src/**/*"

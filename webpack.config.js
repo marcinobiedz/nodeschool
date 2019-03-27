@@ -9,13 +9,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    devtool: "source-map",
+    devtool: "inline-source-map",
     entry: {
-        bundle: ["@babel/polyfill", "./src/app.tsx"]
+        bundle: ["./src/app.tsx"]
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].js"
+        filename: "[name].bundle.js",
+        library: "[name]"
     },
     devServer: {
         port: 9000,
@@ -23,7 +24,7 @@ module.exports = {
         open: false
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".ts", ".tsx", ".js"]
     },
     module: {
         rules: [
@@ -31,7 +32,6 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: [
-                    {loader: "babel-loader"},
                     {loader: "ts-loader"}
                 ]
             },
@@ -39,7 +39,7 @@ module.exports = {
                 test: /\.(png|jpg|gif)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {},
                     },
                 ],
@@ -47,7 +47,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     "less-loader"
                 ]
@@ -60,7 +60,8 @@ module.exports = {
         })])
         .concat([new HtmlWebpackPlugin({
             template: "./src/assets/index.html",
-            title: "My app"
+            title: "My app",
+            inject: "head"
         })])
         .concat([new CleanWebpackPlugin()])
         .concat([new MiniCssExtractPlugin({filename: "[name].css"})])

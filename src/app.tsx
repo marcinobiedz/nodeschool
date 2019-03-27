@@ -5,7 +5,8 @@ import {Application} from "./components/Application";
 
 declare const $VERSION: string;
 
-console.log(`${$VERSION}`);
+export function mainRender(element: Element) {
+	console.log(`${$VERSION}`);
+	ReactDOM.render(<Application/>, element);
 
-const body = document.querySelector("#main-div");
-ReactDOM.render(<Application/>, body);
+}
