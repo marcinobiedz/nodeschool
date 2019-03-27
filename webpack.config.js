@@ -23,6 +23,10 @@ module.exports = {
         host: '0.0.0.0',
         open: false
     },
+    watchOptions: {
+        aggregateTimeout: 600,
+        poll: 1000
+    },
     resolve: {
         extensions: [".ts", ".tsx", ".js"]
     },
