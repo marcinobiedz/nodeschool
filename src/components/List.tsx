@@ -12,7 +12,7 @@ export class List extends Component<ListProps, ListState> {
 	};
 
 	componentDidMount(): void {
-		fetch("http://localhost:9001")
+		fetch("http://server:9001")
 			.then(function (response) {
 				return response.json();
 			})
